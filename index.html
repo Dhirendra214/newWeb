@@ -22,21 +22,18 @@
     <title>PM Technology</title>
    
     <script>
-      function myFunction(){
-        let email = document.getElementById("email").innerText;
+        let email = document.getElementById("email").value;
+       
         let temp = localStorage.getItem("email");
-        
-        if( temp == null){
+        if( temp == null || temp == "" ){
          localStorage.setItem("email", email);
-        
         } else
-         if(temp == email){
+         if(temp === email){
           $("#form_alerts").html("<div class='alert alert-success'>Email Already Registerd! </div>");
           document.getElementById("myForm").reset();
          }
 
       }
-
     </script>
 
   </head>
